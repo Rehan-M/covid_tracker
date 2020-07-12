@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  background-color: rgb(221, 238, 237);
+}
+
+@media (max-wedth: 770px) {
+  .container {
+    width: 100%;
+  }
+}
