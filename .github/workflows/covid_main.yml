@@ -1,7 +1,7 @@
   
 # This is a new basic workflow to help you get started with Actions
 
-name: React Tracker App Deploy to Surge
+name: React covid Tracker App Deploy to Surge
 
 on:
   push:
