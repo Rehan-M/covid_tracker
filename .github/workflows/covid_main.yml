@@ -1,8 +1,7 @@
   
 # This is a new basic workflow to help you get started with Actions
 
-name: React  Tracker App Deploy to Surge
-
+name: React Tracjer App Deploy to Surge
 
 on:
   push:
@@ -10,35 +9,29 @@ on:
   pull_request:
     branches: [ master ]
 
-
 jobs:
-  
+
   build:
-    
-    runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
+  
+      steps:
+      
+      - uses: actions/checkout@v2
 
-    
-    steps:
-    
-    - uses: actions/checkout@v2
+      - name: Install NodeJS
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+      
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      
+      - name: Build React App
+        run: yarn build
 
-    
-    - name: Install NodeJS
-      uses: actions/setup-node@v2-beta
-      with:
-        node-version: 12
-     
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install
-      
-    - name: Build React App
-      run: yarn build
-      
-      
-    - name: Install Surge
-      run: npm install --global surge
-      
-      
-    - name: Deploy to surge
-      run: surge ./build mycovidtrackerp2.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      - name: Install Surge
+        run: npm install --global surge
+
+      - name: Deploy to Surge
+        run: surge ./build mycovidapp.surge.sh --token ${{ secrets.SURGE_TOKEN }}
