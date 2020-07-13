@@ -11,15 +11,14 @@ body {
 
 .image {
   width: 370px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 @media (max-width: 770px) {
   .container {
-    margin: 0 10%;
+    margin: 20px 15%;
   }
   .image {
     width: 100%;
   }
 }
-

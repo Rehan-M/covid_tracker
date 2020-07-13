@@ -1,9 +1,9 @@
 .container {
-  margin: 20px 0;
+  margin: 10px 10px;
 }
 
 .card {
-  margin: 2% 15px !important;
+  margin: 2% 10px !important;
 }
 
 .infected {
@@ -20,6 +20,6 @@
 
 @media (max-wedth: 770px) {
   .card {
-    margin: 2% 10px !important;
+    margin: 2% 25px !important;
   }
 }

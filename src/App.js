@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./App.module.css";
-import Header from "./Header";
 
 import { Cards, Chart, CountryPicker } from "./components";
 import { fetchData } from "./api";
@@ -26,7 +25,6 @@ class App extends React.Component {
     const { data, country } = this.state;
     return (
       <div className={styles.container}>
-        <Header />
         <img className={styles.image} src={coronaImage} alt="COVID-19" />
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
